@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/text_data_cash_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/statistics"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorBlue"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/image_calendar_cash_box"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinner"
+                    app:layout_constraintBottom_toTopOf="@id/spinner" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    style="@style/SpinnerText"
+                    app:layout_constraintTop_toBottomOf="@id/text_data_cash_box"
+                    app:layout_constraintStart_toEndOf="@id/image_calendar_cash_box"
+                    android:entries="@array/array_date"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/raund_tab_backgroud">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                app:tabSelectedTextColor="@color/colorWhite"
+                app:tabTextColor="@color/colorSilverB"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabMaxWidth="280dp"
+                app:tabMinWidth="180dp"
+                android:clipToPadding="false"
+                app:tabIndicatorHeight="0dp"
+                app:tabIndicatorColor="@color/colorBlue"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/raund_tab_backgroud"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabMode="scrollable" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
